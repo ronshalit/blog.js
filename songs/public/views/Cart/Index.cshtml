@@ -1,0 +1,20 @@
+﻿<div class="template cart-index" data-view="CartIndexViewModel">
+    <p data-bind="visible: showMergeMessage, text: mergeMessage"></p>
+    <span class="emptyCartMessage" data-bind="visible: showEmptyMessage()">There are no items in your cart</span>
+    <ul data-bind="foreach: products">
+        <li>
+            <div class="productInfo">
+                <span class="name" data-bind="text: name"></span>
+                <span class="price" data-bind="text: price"></span> /
+                <span class="uom" data-bind="text: UOM"></span>
+                <span  data-bind="text: pawDescription, visible: isPawVisible()"></span>
+                <span class="addToCartContainer" data-bind="with: addToCartViewModel" ></span>
+            </div>
+            <img data-bind="attr: { src: image }"/>
+        </li>
+    </ul>
+    <footer class="cartSum" >
+        Subtotal: $<span data-bind="text: subtotal"></span>
+        <button class="btn btnGreen" data-bind="click: checkout, enable: hasCartItems">Checkout</button>
+    </footer>
+</div>

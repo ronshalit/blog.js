@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{eabc278a-09c2-4973-8916-29954ccc46f5}</ProjectGuid>
+    <ProjectHome />
+    <ProjectView>ShowAllFiles</ProjectView>
+    <StartupFile>bin\www</StartupFile>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <ItemGroup>
+    <Content Include="package.json" />
+    <Compile Include="app.js" />
+    <Compile Include="middleware\apiControllers.js" />
+    <Compile Include="middleware\authentication.js" />
+    <Compile Include="middleware\controllers\me.js" />
+    <Compile Include="middleware\spa.js" />
+    <Content Include="public\index.htm" />
+    <Content Include="public\partials\insert.html" />
+    <Content Include="public\partials\register.html" />
+    <Content Include="start_server.bat" />
+    <Content Include="views\login.hbs" />
+    <Content Include="views\error.hbs" />
+    <Compile Include="middleware\controllers\songs.js" />
+    <Compile Include="public\javascripts\angular-resource.min.js" />
+    <Compile Include="public\javascripts\angular-route.min.js" />
+    <Compile Include="public\javascripts\angular.min.js" />
+    <Compile Include="public\javascripts\Controllers\controllers.js" />
+    <Compile Include="public\javascripts\Controllers\Login.js" />
+    <Compile Include="public\javascripts\Controllers\NewSong.js" />
+    <Compile Include="public\javascripts\Controllers\Register.js" />
+    <Compile Include="public\javascripts\Controllers\SongDetail.js" />
+    <Compile Include="public\javascripts\Controllers\SongList.js" />
+    <Compile Include="public\javascripts\Main.js" />
+    <Compile Include="public\javascripts\services.js" />
+    <Content Include="public\partials\home.html" />
+    <Content Include="public\partials\song-detail.html" />
+    <Content Include="public\partials\songs.html" />
+    <Content Include="public\stylesheets\main.css" />
+    <Content Include="public\stylesheets\Alef-Regular.svg" />
+    <Content Include="public\views\layout.htm" />
+    <Content Include="public\views\_layout.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin" />
+    <Folder Include="middleware" />
+    <Folder Include="middleware\controllers" />
+    <Folder Include="public" />
+    <Folder Include="public\images" />
+    <Folder Include="public\javascripts" />
+    <Folder Include="public\javascripts\Controllers\" />
+    <Folder Include="public\partials" />
+    <Folder Include="public\stylesheets" />
+    <Folder Include="public\views" />
+    <Folder Include="public\views\Campaign" />
+    <Folder Include="public\views\Cart" />
+    <Folder Include="public\views\Checkout" />
+    <Folder Include="public\views\ContactUs" />
+    <Folder Include="public\views\Misc" />
+    <Folder Include="public\views\Products" />
+    <Folder Include="public\views\Profile" />
+    <Folder Include="views" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

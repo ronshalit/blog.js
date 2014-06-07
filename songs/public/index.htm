@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" ng-app="spaApp">
+<head>
+  <script src="javascripts/angular.min.js"></script>
+  <script src="javascripts/angular-route.min.js"></script>
+  <script src="javascripts/angular-resource.min.js"></script>
+  <script src="javascripts/main.js"></script>
+  <script src="javascripts/Controllers/controllers.js"></script>
+    <script src="javascripts/Controllers/SongList.js"></script>
+    <script src="javascripts/Controllers/Login.js"></script>
+    <script src="javascripts/Controllers/NewSong.js"></script>
+    <script src="javascripts/Controllers/Register.js"></script>
+    <script src="javascripts/Controllers/SongDetail.js"></script>    
+  <script src="javascripts/services.js"></script>
+  <link href="stylesheets/main.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1">
+    <script>
+var ws;
+function socket() {
+  ws = new WebSocket("ws://"+location.host.split(":")[0]+":8080");
+  ws.onmessage = function ( e ) {
+    var data = JSON.parse(e.data);
+    if ( data.r ) {
+      location.reload();
+    }
+  };
+}
+setInterval(function () {
+  if ( ws ) {
+    if ( ws.readyState !== 1 ) {
+      socket();
+    }
+  } else {
+    socket();
+  }
+}, 5000);
+
+    </script>
+</head>
+<body>
+    <div id="logo">
+        <a href="#/"></a>
+        <div id="top-border"></div>
+        <div id="top-triangle"></div>
+        <div id="top-inner"></div>
+        <div id="left-filler"></div>
+        <div id="bottom-left-side-triangle"></div>
+    </div>
+    <a href="#/" class="header">
+        <h1>משורר</h1>
+        <span class="tagline"> מילים במיקור המונים</span>
+    </a>
+
+    <div ng-controller="LoginCtrl">
+        <form ng-submit="login()" ng-show="showLogin && !registering" class="login">
+            <span class="caption">דוא"ל: </span><input ng-model="username" class="field" /><br />
+            <span class="caption">ססמא: </span><input ng-model="password" type="password" class="field" /><br />
+            <input type="submit"  value="כניסה" />
+            <input type="button" ng-click="register()" value="הרשמה" />
+            <div>{{error}}</div>
+        </form>
+        <div ng-show="!showLogin">
+            שלום {{name}},
+            <input type="button" ng-click="logout()" value="יציאה" />
+            <a href="#/songs/new">שיר חדש</a>
+        </div>
+    </div>
+ 
+  <div ng-view></div>
+    
+</body>
+</html>

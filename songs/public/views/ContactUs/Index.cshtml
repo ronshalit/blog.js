@@ -1,0 +1,17 @@
+﻿<div class="template contactus-index contactForm" data-view="ContactUsViewModel">
+        <fieldset>
+            <label data-bind="validationElement: contactUsEmail">Email
+                <input type="email" data-bind="value: contactUsEmail" />
+            </label>
+            <label  data-bind="validationElement: contactUsPhone">Phone Number
+                <input type="tel" data-bind="value: contactUsPhone" />
+            </label>
+            <label data-bind="validationElement: contactMessage">More information
+                <textarea data-bind="value: contactMessage"></textarea>
+            </label>
+        </fieldset>
+    
+        <div class="coActions">
+            <button class="btn btnGreen" data-bind="click: submitContact">Send</button>
+        </div>
+</div>

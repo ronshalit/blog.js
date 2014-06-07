@@ -1,0 +1,11 @@
+﻿
+<div class="template checkout-thankyou" data-view="ThankyouViewModel">
+  
+    <span data-bind="visible: !ready()">Processing...</span>
+    <div data-bind="visible: ready">
+    
+        <h1>Thank you for shopping at Artizone.</h1>
+        <h2>Your order was successfully submitted. </h2>
+        <a data-ga-category="Checkout on mobile" data-ga-label="Continue shopping button" data-ga-action="click" href="#" class="btn btnGreen" data-bind="click: homeClick">Continue shopping</a>
+    </div>
+</div>

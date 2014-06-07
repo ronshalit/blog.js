@@ -1,0 +1,11 @@
+﻿<ul class="preview">
+    <li ng-repeat="song in songs" class="song">
+        <span class="title"><a href="/#songs/{{song._id}}">{{song.title}}</a>/ מאת <a href="#/songs/by/{{song.by.name}}/{{song.by._id}}">{{song.by.name}}</a></span>
+        <p class="lyrics">
+            <span ng-repeat="row in firstTwoRows(song.lyrics) track by $index">
+                {{row}}<br />
+            </span>
+            <a href="#/songs/{{song._id}}">קרא עוד...</a>
+        </p>
+    </li>
+</ul>
