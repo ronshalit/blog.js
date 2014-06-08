@@ -22,7 +22,7 @@
     <Compile Include="middleware\authentication.js" />
     <Compile Include="middleware\controllers\me.js" />
     <Compile Include="middleware\spa.js" />
-    <Content Include="public\index.htm" />
+    <Content Include="public\index.html" />
     <Content Include="public\partials\insert.html" />
     <Content Include="public\partials\register.html" />
     <Content Include="start_server.bat" />
