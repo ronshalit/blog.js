@@ -51,7 +51,7 @@ api(app);
 
 // default route - get index.htm
 app.get("/",function(req,res){
-  res.sendfile('public/index.htm');
+  res.sendfile('public/index.html');
 });
 
 // otherwise serve files from the static files folder
