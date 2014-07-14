@@ -1,0 +1,66 @@
+﻿<div class="template profile-signup" data-view="SignupViewModel">
+    <div class="siteLogo"></div>
+    <span class="tagline"></span>
+    <fieldset class="loginForm">
+        <span class="legend"><legend>Create an account</legend></span>
+        
+        <label data-bind="validationElement: selectedCity" >
+            City
+            <select data-bind="
+            value: selectedCity,
+            options: cities,
+            optionsText: 'cityName',
+            optionsValue: 'siteId',
+    optionsCaption: 'Choose your city'">
+            </select>
+        </label>
+
+        <label data-bind="validationElement: email">
+            Email address
+            <input type="email" data-bind="value: email" />
+        </label>
+        <label data-bind="validationElement: password">
+            Password
+            <input type="password" data-bind="value: password" />
+        </label>
+        <label data-bind="validationElement: passwordRetype">
+            Retype your password
+            <input type="password" data-bind="value: passwordRetype" />
+        </label>
+        
+        <label data-bind="validationElement: firstName">
+            First name
+            <input type="text" data-bind="value: firstName" />
+        </label>
+        
+        <label data-bind="validationElement: lastName">
+            Last name
+            <input type="text" data-bind="value: lastName" />
+        </label>
+
+        <label data-bind="validationElement: isAgreeing">
+            <input type="checkbox" data-bind="checked: isAgreeing" checked="checked" />
+            <span class="above18">
+                I am over 18 and agree to Artizone's <a data-bind="click: showTerms">Terms</a> and <a data-bind="    click: showPrivacy">Privacy statement</a>
+            </span>
+        </label>
+        
+        
+        <label>
+            <input type="checkbox" data-bind="checked: emailsSubscription" />
+            <span class="emailsSubscription"> I would like to receive special offers and news</span>
+        </label>
+        
+        
+         
+        
+        <ul class="validation-errors" data-bind="foreach: notifications, visible: hasNotifications()">
+            <li data-bind="attr: { 'class': notificationType }">
+                <span class="message" data-bind="text: message"></span>
+            </li>
+        </ul>
+        
+        <button data-ga-category="Sign up on mobile" data-ga-label="Create account and continue"  data-ga-action="click" class="btn btnGreen" data-bind="click: signup">Create account and continue</data-ga-category=button>
+    </fieldset>
+    
+</div>

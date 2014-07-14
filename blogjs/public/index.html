@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en" ng-app="spaApp">
+ <!--<![endif]-->
+<head>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Ron Shalit</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="stylesheets/base.css">
+    <link rel="stylesheet" href="stylesheets/skeleton.css">
+    <link rel="stylesheet" href="stylesheets/layout.css">
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    <script src="javascripts/angular.min.js"></script>
+    <script src="javascripts/angular-route.min.js"></script>
+    <script src="javascripts/angular-resource.min.js"></script>
+    <script src="javascripts/Main.js"></script>
+    <script src="javascripts/Controllers/controllers.js"></script>
+    <script src="javascripts/Controllers/Posts.js"></script>
+    <script src="javascripts/Controllers/PostDetail.js"></script>
+    <script src="javascripts/services.js"></script>
+
+    <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-52826202-1', 'auto');
+          ga('send', 'pageview');
+
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="sixteen columns">
+
+            <h1 class="remove-bottom" style="margin-top: 40px"><a href="#/posts">Ron Shalit's Personal Blog</a></h1>
+            <h5>Version 0.00001</h5>
+            <hr />
+        </div>
+        <!-- === all the views go here -->
+        <div ng-view class="sixteen columns"></div>
+        
+        <!-- ======  FOOTER =====-->
+        
+        <div class="one-third column">
+            <h3>About</h3>
+            <p>
+                You can find more information about me in <a href="http://about.me/main,htm">about.me/main.htm</a>. You can also say hello on <a href="http://facebook.com/ron.shalit">facebook</a>.
+                Right now this is just a placeholder with no real content.
+            </p>
+        </div>
+        <div class="one-third column">
+            <h3>Topics?</h3>
+            <p>I promise to have no specific topic what so ever. Having said that you might find the following covered in this blog:</p>
+            <ul class="square">
+                <li><strong>Software</strong>: specifically stuff that I find interesting these days, like product design and node.js.</li>
+                <li><strong>Food science</strong>: I know it's irrelevant to the previous point, but that's the whole point.</li>
+                <li><strong>Crazy libertarian ideas</strong>: maybe, I don't know..</li>
+            </ul>
+        </div>
+        <div class="one-third column">
+            <h3>So what is this</h3>
+            <p>Right now this is nothing but a skeleton (<a href="https://github.com/dhg/Skeleton">skeleton</a>) example page with modified content, served to you over a <a href="http://nodejs.org/">node.js</a> server application hosted on <a href="http://heroku.com">heroku</a>..</p>
+        </div>
+        
+
+    </div><!-- container -->
+    <!-- End Document
+    ================================================== -->
+</body>
+</html>

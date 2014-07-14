@@ -1,0 +1,8 @@
+﻿<div class="sixteen columns" >
+    <h2><span class="title">{{post.title}}</span></h2>
+    <p class="lyrics">
+        <span ng-repeat="row in rows(post.content) track by $index">
+            {{row}}<br />
+        </span>
+    </p>
+</div>

@@ -1,0 +1,10 @@
+﻿<span ng-show="showNew">לחץ על זמר לכתיבת שיר</span>
+<span ng-show="!showNew">התחבר על מנת להוסיף שירים</span> 
+<ul class="singerList">    
+    <li ng-repeat="singer in singers" class="singer" ng-click="newSong(singer._id)">
+        <h2>{{singer.name}}</h2>
+        <span ng-show="singer.numOfSongs>0">{{singer.numOfSongs}} שירים </span>
+        <div ng-show="singer.numOfSongs==0 && !showNew">ל{{singer.name}} טרם נכתבו שירים</div>
+        <div ng-show="singer.numOfSongs==0 && showNew">היה הראשון לכתוב שיר ל{{singer.name}} </div>
+    </li>
+</ul>

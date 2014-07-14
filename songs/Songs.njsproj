@@ -21,10 +21,12 @@
     <Compile Include="middleware\apiControllers.js" />
     <Compile Include="middleware\authentication.js" />
     <Compile Include="middleware\controllers\me.js" />
+    <Compile Include="middleware\controllers\singers.js" />
     <Compile Include="middleware\spa.js" />
     <Content Include="public\index.html" />
     <Content Include="public\partials\insert.html" />
     <Content Include="public\partials\register.html" />
+    <Content Include="public\partials\singers.html" />
     <Content Include="start_server.bat" />
     <Content Include="views\login.hbs" />
     <Content Include="views\error.hbs" />
@@ -36,6 +38,7 @@
     <Compile Include="public\javascripts\Controllers\Login.js" />
     <Compile Include="public\javascripts\Controllers\NewSong.js" />
     <Compile Include="public\javascripts\Controllers\Register.js" />
+    <Compile Include="public\javascripts\Controllers\Singers.js" />
     <Compile Include="public\javascripts\Controllers\SongDetail.js" />
     <Compile Include="public\javascripts\Controllers\SongList.js" />
     <Compile Include="public\javascripts\Main.js" />

@@ -14,7 +14,10 @@ body{
     color:#1A1A1A;
 margin-top: -53px;
 }
-
+h2{
+    margin: 0;
+    padding: 0;
+}
 h1{
     margin: 0;
     padding: 0;
@@ -87,7 +90,15 @@ width:100%;
     
     font-size: 20px;
 }
-
+ul.singerList{
+    list-style-position: inside;
+    list-style: none;
+    padding: 0;
+}
+    ul.singerList li {
+        display: block;
+        border-top: 1px solid #1A1A1A;
+    }
 ul.preview{
     
     list-style-position: inside;

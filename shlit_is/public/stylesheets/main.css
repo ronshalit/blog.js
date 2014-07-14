@@ -1,0 +1,21 @@
+﻿
+
+body{
+    font-size: 24px;
+    padding: 0;
+    color:#000;
+    font-family: Josefin Sans;
+}
+h1{
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    width: 100%;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+}
+img{
+    display:inline;
+    max-width: 80%;
+    max-height:80%
+}
