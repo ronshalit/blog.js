@@ -1,5 +1,5 @@
 ﻿var fs = require('fs');
-var firstLine = /(.*?)\n|\r/;
+var firstLine = /(.*?)(\n|\r)/;
 
 var posts = [
     //{url:"foo", title:"Foo", content:"bar"}
