@@ -1,8 +1,7 @@
-﻿<div class="sixteen columns" >
-    <h2>{{post.title}}</h2>
-    <p>
-        <span ng-repeat="row in rows(post.content) track by $index">
-            {{row}}<br />
-        </span>
+<div ng-comments="true" class="sixteen columns" >
+    <h2>{{post.title}} <span>{{date(post.date)}}</span></h2>    
+    <p ng-bind-html="html(post.content)">
+
     </p>
 </div>
+<div id="comments" class="sixteen columns"></div>
