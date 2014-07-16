@@ -1,13 +1,12 @@
 var services = angular.module('services', ['ngResource']);
 
-services.factory('Post', ['$resource',
-  function($resource){
+services.factory('Post', ['$resource','$sce',
+  function($resource,$sce){
     var post= $resource('api/posts/:postUrl', {}, {
         query: { method: 'GET', params: { postUrl: '' }, isArray: true }
     });
-    post.toRows=function (str) {
-        if(str)
-            return str.split('\n');
+    post.html=function(p){
+        return $sce.trustAsHtml(p.replace(/\n/g, '<br>'));
     }
     return post;
   }]);
