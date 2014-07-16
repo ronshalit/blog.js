@@ -44,15 +44,6 @@ app.get("/",function(req,res){
 app.use('/', express.static(path.join(__dirname, 'public'))); 
 
 
-
-// single page application content
-/*spa.start(app,{
-	viewsPath:'./public/views/',
-	layoutFilename:'layout.htm', 
-	scriptsPath:'public/javascripts/',
-	stylesPath:'public/stylesheets/'
-});*/
-
 /// catch 404 and forwarding to error handler (nothing should get here- the SPA will catch everything)
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
