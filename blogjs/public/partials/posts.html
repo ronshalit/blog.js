@@ -1,10 +1,10 @@
-﻿
+
 <div ng-repeat="post in posts" class="sixteen columns">
-    <h2><a href="/#posts/{{post.url}}">{{post.title}}</a></h2>
+    <h2><a href="/#posts/{{post.url}}">{{post.title}}</a> <span>{{date(post.date)}}</span></h2>
     <p>
-        <span ng-repeat="row in firstTwoRows(post.content) track by $index">
-            {{row}}<br />
-        </span>
+        <div ng-bind-html="firstRow(post.content)">
+
+        </div>
         <a href="/#posts/{{post.url}}">Read more...</a>
         <hr />
     </p>
