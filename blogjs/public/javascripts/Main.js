@@ -1,4 +1,4 @@
-﻿
+
 
 var spa = angular.module('spaApp', [
   'ngRoute',
@@ -39,3 +39,18 @@ spa.directive('ngFocus', function($timeout, $parse) {
     }
   };
 });
+
+spa.directive('ngComments', function() {
+    return {
+        restrict: 'A',
+        link: function(scope, element) {
+            
+            gapi.comments.render('comments', {
+            href: window.location,
+            width: element[0].offsetWidth.toString(),
+            first_party_property: 'BLOGGER',
+            view_type: 'FILTERED_POSTMOD'
+        });
+        }
+    };
+  })
