@@ -8,8 +8,8 @@ var bodyParser = require('body-parser');
 var api = require('./middleware/apiControllers');
 var session = require("express-session");
 var app = express();
- 
-
+var posts = require("./middleware/controllers/posts");
+var bots = require("./middleware/bots.js")(app);
 // The `consolidate` adapter module  
 var cons = require('consolidate');
 app.set('views', './views');
@@ -31,52 +31,37 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser('foo'))
    .use(session());
 
+///////// bots behavior ///
+// posts
+bots.get(/^\/posts\/([^\/]+)$/,function (req,res,next){     
+    var post = posts.byUrl[req.params[0]];
+    post.description = post.content.match(/(.*?)(\n|\r)/)[0];
+    res.render("post",post); 
+});
+
+// image files
+bots.get(/.*images\/(.*)$/, function(req, res, next){
+    res.sendfile("public/images/"+req.params[0], {posts: posts.all});
+});
+
+// all the rest get the homepage
+bots.use(function(req, res, next){
+    res.render("homepage", {posts: posts.all});
+});
+// end bot behavior 
 
 // api controllers (api/controller/...)
 api(app); 
 
-// default route - get index.htm
-app.get("/",function(req,res){
+// otherwise serve files from the static files folder
+app.use(express.static(path.join(__dirname, 'public'))); 
+app.use('/posts', express.static(path.join(__dirname, 'public'))); 
+
+
+app.use(function(req,res){
   res.sendfile('public/index.html');
 });
 
-// otherwise serve files from the static files folder
-app.use('/', express.static(path.join(__dirname, 'public'))); 
-
-
-/// catch 404 and forwarding to error handler (nothing should get here- the SPA will catch everything)
-app.use(function(req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
-});
-
-
-
-
-/// error handlers
-
-// development error handler
-// will print stacktrace
-if (app.get('env') === 'development') {
-    app.use(function(err, req, res, next) {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
-    });
-}
-
-// production error handler
-// no stacktraces leaked to user
-app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-        message: err.message,
-        error: {}
-    });
-});
 
 
 //app.listen(80);
