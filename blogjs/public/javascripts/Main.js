@@ -8,6 +8,7 @@ var spa = angular.module('spaApp', [
  
 spa.config(['$routeProvider','$locationProvider',
   function($routeProvider,$locationProvider) {
+      $locationProvider.html5Mode(true);
       $routeProvider.          
       when('/posts', {
         templateUrl: 'partials/posts.html',
