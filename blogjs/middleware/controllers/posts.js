@@ -14,10 +14,13 @@ var files = fs.readdirSync(path);// TODO: get the path from a configs parameter
 for(var i = 0; i<files.length; i++){
 	var url=files[i];
     var content=String.prototype.concat.call(fs.readFileSync(path+url),"");
-    // extract the first line as the title
-    var title = content.match(firstLine)[1];
+    // extract the first line as the title and date
+    var titleAndDate = content.match(firstLine)[1].split('|');
+    var title = titleAndDate[0];
+    var date= new Date(titleAndDate[1]).toDateString();
+
     content = content.replace(firstLine,'').trim();
-    var date= fs.statSync(path+url).mtime;
+    
     date2post[date+url]={url:url, title:title, content:content, date:date};
     dates.push(date+url);
 }
@@ -38,5 +41,7 @@ module.exports = {
         if(url)
             return res.send( url2post[url]);
         res.send(posts);
-    }
+    },
+    byUrl:url2post,
+    all: posts
 }
